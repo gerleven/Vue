@@ -20,10 +20,3 @@ export default {
   components: { HeaderBarBrand, HeaderBarLinks },
 };
 </script>
-
-<style scoped>
-.footer{
-  color: blue;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-</style>
