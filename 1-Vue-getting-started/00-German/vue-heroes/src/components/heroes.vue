@@ -90,7 +90,7 @@ export default {
       hero: {
         id: 20,
         firstName: 'Purulaio',
-        lastName: 'Rwakanillos',
+        lastName: 'Rwakanilloss',
         description: 'ring telephon sound while flying',
         capeColor: '',
         power: '',
