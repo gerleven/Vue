@@ -74,7 +74,7 @@
               <i class="fas fa-save"></i>
               <span>Save</span>
             </button>
-          </footer>
+          </footer> 
         </div>
         <div class="notification is-info">{{mesagge}}</div>
       </div>
