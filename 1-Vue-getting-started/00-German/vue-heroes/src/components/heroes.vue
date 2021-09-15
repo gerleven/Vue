@@ -29,6 +29,10 @@
                 <label class="label" for="description">description</label>
                 <textarea class="input" id="description" type="text" v-model="hero.description"/>
               </div>
+
+              <!-- RADIO BUTTONS-->
+              <!-- el radio group no es una property del tag, los grupos se determinan automaticamente segu a que variable estan bindeados los diferentes rb con v-model-->
+              <!--"1er radio goup: capeColor-->
               <div class="field">
                 <label class="label">cape color</label>
                 <label class="radio" for="color-red">
@@ -48,10 +52,28 @@
                   <input type="radio" id="color-green" value="green" v-model="hero.capeColor"/>
                   green
                 </label>
-                <div class="color-line" v-bind:style="{'background-color': hero.capeColor}"></div>
+
+                <!--Como bindear la property style de un elemento a una clase que sea dinamica segun cambie una variable: -->
+                <div class="color-line" v-bind:style="{'background-color': hero.capeColor}"></div> <!--Aca la property style cambiara cada vez que capeColor lo haga-->
                 <div class="color-line" :style="{'background-color': hero.capeColor}"></div>
                 <div class="color-line" style="background-color: #FF5511"></div> <!--Aca no hay bindeo, es una asignacion directa de la property style-->
+                
+                <!--"2do radio goup: headColor-->
+                <label class="radio" for="color-silver">
+                  <input type="radio" id="color-silver" value="silver" v-model="hero.headColor"/>
+                  silver
+                </label>
+                
+                <label class="radio" for="color-pink">
+                  <input type="radio" id="color-pink" value="pink" v-model="hero.headColor"/> <!--aca el radio group pasa a ser hero.headCOlor-->
+                  pink
+                </label>
+
+                <div class="color-line" v-bind:style="{'background-color': hero.headColor}"></div>
+                
               </div>
+
+              <!-- Select (DropDown)-->
               <div class="field">
                 <label for="power">
                   super power
@@ -72,16 +94,17 @@
                   <input type="checkbox" class="is-primary" id="active" v-model="hero.active"/>
                 </label>
                 <br>
-                <p :class="{checkedGreen: hero.active, checkedRed: !hero.active}">testeando class binding saegun el checkbox</p>
+                <!--Como bindear la property class de un elemento a una clase que cambie dinamicamente segun cambie una variable (hero.active en este caso): -->
+                <p :class="{checkedGreen: hero.active, checkedRed: !hero.active, checkedBold: hero.active, fontSize20px: true}">testeando class binding saegun el checkbox</p>
               </div>
             </div>
           </div>
           <footer class="card-footer">
-            <button class="link card-footer-item cancel-button" v-on:click="cancelHero"> <!--long syntax-->
+            <button class="link card-footer-item cancel-button" v-on:click="cancelHero"> <!--long syntax to handle events-->
               <i class="fas fa-undo"></i>
               <span>Cancel</span>
             </button>
-            <button class="link card-footer-item" @click="saveHero"> <!--short syntax-->
+            <button class="link card-footer-item" @click="saveHero"> <!--short syntax to handle events-->
               <i class="fas fa-save"></i>
               <span>Save</span>
             </button>
@@ -104,6 +127,7 @@ export default {
         lastName: 'Rwakanilloss',
         description: 'ring telephon sound while flying',
         capeColor: '',
+        headColor: '',
         power: '',
         active: true,
 
@@ -129,10 +153,16 @@ export default {
 <style>
 .checkedGreen{
   color: rgb(21, 187, 71);
+}
+
+.checkedBold{
   font-weight: bold;
 }
+
 .checkedRed{
   color: rgb(187, 21, 21);
-  font-weight: bold;
+}
+.fontSize20px{
+  font-size: 20px;
 }
 </style>
