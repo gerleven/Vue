@@ -49,14 +49,14 @@
                   green
                 </label>
                 <div class="color-line" v-bind:style="{'background-color': hero.capeColor}"></div>
-                <div class="color-line" style="background-color: #FF5511"></div>
                 <div class="color-line" :style="{'background-color': hero.capeColor}"></div>
+                <div class="color-line" style="background-color: #FF5511"></div> <!--Aca no hay bindeo, es una asignacion directa de la property style-->
               </div>
               <div class="field">
                 <label for="power">
                   super power
                   <div class="select is-primary">
-                    <select id="power" v-model="hero.power" @keyup.esc="clearPower" :class="{invalid: hero.power==='Speed'}">
+                    <select id="power" v-model="hero.power" @keyup.esc="clearPower" :class="{invalid: hero.power===''}">
                       <option disabled value>Please select one</option>
                       <option>Speed</option>
                       <option>Flight</option>
@@ -71,6 +71,8 @@
                   active
                   <input type="checkbox" class="is-primary" id="active" v-model="hero.active"/>
                 </label>
+                <br>
+                <p :class="{checkedGreen: hero.active, checkedRed: !hero.active}">testeando class binding saegun el checkbox</p>
               </div>
             </div>
           </div>
@@ -125,5 +127,12 @@ export default {
 
 
 <style>
-
+.checkedGreen{
+  color: rgb(21, 187, 71);
+  font-weight: bold;
+}
+.checkedRed{
+  color: rgb(187, 21, 21);
+  font-weight: bold;
+}
 </style>
