@@ -9,6 +9,7 @@
       <HeaderBarLinks></HeaderBarLinks>
     </nav>
   </header>
+  
 </template>
 
 <script>
