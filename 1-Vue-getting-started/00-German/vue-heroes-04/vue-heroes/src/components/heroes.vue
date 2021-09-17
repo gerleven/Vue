@@ -32,7 +32,7 @@
               </label>
             </div>
             <div class="field">
-              <label class="label" for="firstName">first name</label>
+              <label class="label" for="firstName">first name</label> 
               <input
                 class="input"
                 id="firstName"
@@ -67,7 +67,7 @@
               </div>
             </div>
 
-            
+
           </div>
         </div>
       </div>
