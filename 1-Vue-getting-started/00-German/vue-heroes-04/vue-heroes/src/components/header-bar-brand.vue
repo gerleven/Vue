@@ -12,7 +12,6 @@
       <span class="tour">TOUR</span>
       <span class="of">OF</span>
       <span class="heroes">HEROES</span>
-      <span>- (German)</span>
     </div>
     <button
       class="link navbar-burger burger"
